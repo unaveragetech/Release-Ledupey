@@ -1,62 +1,119 @@
-Virus total scan - eab16896e02a3653818ed6e3a50e4c25391a6e9f5d455d382154bbb3c9441709
-please do your own and compare file sturcture if you feel unsure of anything 
-virus total - https://www.virustotal.com/gui/file/- put the whole zip in its about 13mb so should only take at most 5 min
-
-Release-Ledupey
-Overview
-Welcome to the Release-Ledupey repository! This is an original project developed by Nbtguyoriginal. The codebase is designed to interact with ChatGPT and GitHub to streamline the process of finding and identifying dupe that are caused by plugins 
-
-This README provides you with the necessary information to get started with the project. Unfortunately, as of the time of this document's creation, there won't be any releases added to the public version. Instead, we will guide you on how to download the repository as a zip file.
-
-Prerequisites
-Before you proceed, make sure you have the following software installed on your system:
-
-Python: The programming language used for this project. You can download it here. (https://www.python.org/)
-
-Pillow: A Python Imaging Library. Install it using pip with the command (pip install pillow). In a command prompt
-
-OpenAI: The API for GPT-3. Install it using pip with the command (pip install openai).in a command prompt 
-
-GitHub: You will need a GitHub account and API key for accessing the GitHub API. Can be found on your github account 
-
-Getting Started
-Here are the steps to download and use this project:
-
-Navigate to the main page of the repository at https://github.com/Nbtguyoriginal/Release-Ledupey.git
-
-Above the list of files, click on the <> Code button.
-
-To the right of the <> Code button, click on the Download ZIP button.
-
-Extract the zip file to your desired location. Any folder (suggested location is Desktop) 
-
-Navigate to the extracted folder in your terminal/command prompt. Or open the folder and type cmd in the bar
-
-Pip the required resources listed above or use this string 
-(pip install pillow PyGithub openai
-)
-
-Insert your keys 
-Github key goes in the script around line 306
-says(github-token here)
-Open ai key goes in config.py
-
-All done now just double click the ledupey.py
-you should get a loading screen pop-up 
-that can be changed using the other python file thats included 
 
 
-Usage
-After downloading and setting up the project, open the script in your IDE or Python editor. You will need to add your GitHub API key to the appropriate location in the script. Additionally, you will need to add your OpenAI key to the config.py file.
+# Release-Ledupey Overview
 
-Contribution
-We welcome contributions from everyone. Before you start contributing, please see our contributing guidelines (To do for now a pull request should do).
+Welcome to the **Release-Ledupey** repository! This project, developed by Nbtguyoriginal, assists users in identifying and managing duplicates caused by plugins in Minecraft by utilizing GitHub's API and OpenAI's ChatGPT.
 
-Support
-If you're having any problem, please raise an issue on GitHub and ill try to sort it will get back to you. Be sure to check the existing issues before creating a new one. And check that you've installed correctly 
+## Important Note
+As of now, there are no public releases available. Instead, you can download the repository as a ZIP file.
 
-If you make a video or share this code base please just give me a shoutout XD have fun duping 
+### VirusTotal Scan
+We recommend verifying the safety of the files. You can use the VirusTotal scan linked below to compare the file structure:
+- [VirusTotal Scan](https://www.virustotal.com/gui/file/eab16896e02a3653818ed6e3a50e4c25391a6e9f5d455d382154bbb3c9441709)
 
-License
-This project is licensed under the Open eclispe
-Wich means anyone can use or modify this code as long as your code is also under eclispe 
+## Prerequisites
+Before getting started, ensure you have the following software installed:
+
+- **Python**: Download from [python.org](https://www.python.org/)
+- **Pillow**: Install via pip:
+  ```bash
+  pip install pillow
+  ```
+- **OpenAI**: Install via pip:
+  ```bash
+  pip install openai
+  ```
+- **PyGithub**: Install via pip:
+  ```bash
+  pip install PyGithub
+  ```
+- **GitHub**: You’ll need a GitHub account and an API key (available in your GitHub settings).
+
+## Getting Started
+Follow these steps to download and use the project:
+
+1. Navigate to the repository: [Release-Ledupey on GitHub](https://github.com/Nbtguyoriginal/Release-Ledupey.git).
+2. Click the `<> Code` button, then click the `Download ZIP` button.
+3. Extract the ZIP file to your preferred location (recommended: Desktop).
+4. Open your terminal/command prompt and navigate to the extracted folder. Alternatively, open the folder and type `cmd` in the address bar.
+5. Install the required resources:
+   ```bash
+   pip install pillow PyGithub openai
+   ```
+6. **Insert API Keys**:
+   - Open `ledupey.py` in a text editor.
+   - Locate line 180 and replace the placeholder with your GitHub API key:
+     ```python
+     token = "Replace with your own key"
+     ```
+   - Create a file named `config.py` in the same directory and add your OpenAI API key:
+     ```python
+     API_KEY = "Your OpenAI API key"
+     ```
+
+Once set up, double-click `ledupey.py` to launch the application.
+
+## Detailed Code Explanation
+
+### Loading Screen
+The function `show_loading_screen()` creates a loading GUI that informs users while the application installs any required libraries. This function:
+
+- Creates a new `Toplevel` window for the loading screen.
+- Attempts to display a logo by resizing it from the local directory.
+- Uses a `ttk.Progressbar` to provide visual feedback on the loading status.
+- Automatically closes after 3.5 seconds unless interrupted.
+
+### Installing Requirements
+The `install_requirements()` function checks for any missing packages specified in `requirements.txt`. It uses `subprocess.check_call()` to run pip commands, which ensures that necessary libraries are installed seamlessly.
+
+### Main GUI Class: `GitHubSearchGUI`
+The `GitHubSearchGUI` class builds the main user interface, allowing users to:
+
+- **Input Repository**: Enter a GitHub repository name or URL.
+- **Search Keywords**: Input keywords for issue searching.
+- **Select Browser**: Choose a browser to open relevant links.
+- **Display Results**: Show search results and allow clickable links for easy navigation.
+- **Save and Load Repositories**: Save frequently used repositories for quick access.
+
+**Key Functional Methods**:
+- `search_issues()`: Queries GitHub for issues based on user input and keywords. It handles errors such as invalid repository names gracefully.
+- `open_url()`: Opens links in the selected browser and ensures that the URL is valid.
+- `clear_results()`: Clears the results text box for new searches.
+- `save_repo()`: Saves the current repository name to a text file, ensuring no duplicates.
+- `load_saved_repos()`: Loads previously saved repositories from a text file, handling the case where the file does not exist.
+
+### ChatGPT Integration: `ChatGPTPopup`
+The `ChatGPTPopup` class provides functionality for users to interact with ChatGPT.
+
+**Key Features**:
+- **Temperature and Token Sliders**: Users can adjust parameters for the model's responses, allowing for varied outputs.
+- **Ask DupeBot**: Sends a question to the ChatGPT model and displays the response, while keeping a history of the conversation.
+
+**Potential Edge Cases**:
+- If the user enters a question but does not set the temperature or token limits, default values are applied.
+- If the conversation history file does not exist when attempting to load, an error message is displayed.
+
+## Example Usage
+1. **Find a Plugin**: Log onto a Minecraft server and find a plugin.
+2. **Search GitHub**: Type the plugin's name followed by "GitHub" (e.g., `https://github.com/GC-spigot/AdvancedEnchantments`).
+3. **Input Repository**: Copy the repository link into the GUI and add relevant keywords (e.g., "dupe" or "glitch").
+4. **Search for Issues**: Click "Findem" to search for related issues.
+5. **Review Results**: Examine the results and identify potential duplication methods.
+6. **Save Repositories**: Save repositories for quick access later.
+
+### Additional Features
+- **Color Picker**: Change the application's background color to personalize the interface.
+- **Logo Customization**: Use a variety of logos to customize the loading screen.
+
+## Contribution
+We welcome contributions! Please refer to our contributing guidelines. For now, simply submit a pull request.
+
+## Support
+If you encounter any issues, please raise them on GitHub. Before submitting a new issue, check existing ones and ensure you have followed the installation steps correctly.
+
+If you create a video or share this codebase, a shoutout would be appreciated! Have fun duplicating!
+
+## License
+This project is licensed under the Eclipse License, allowing anyone to use or modify the code as long as their code is also under the same license.
+
+---
