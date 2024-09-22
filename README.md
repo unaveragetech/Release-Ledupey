@@ -27,6 +27,14 @@ Before getting started, ensure you have the following software installed:
   ```bash
   pip install PyGithub
   ```
+
+or 
+ **install all**: Install via pip:
+  ```bash
+  pip install openai
+  pip install pillow
+  pip install PyGithub
+
 - **GitHub**: You’ll need a GitHub account and an API key (available in your GitHub settings).
 
 ## Getting Started
