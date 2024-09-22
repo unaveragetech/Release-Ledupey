@@ -34,6 +34,7 @@ or
   pip install openai
   pip install pillow
   pip install PyGithub
+```
 
 - **GitHub**: You’ll need a GitHub account and an API key (available in your GitHub settings).
 
