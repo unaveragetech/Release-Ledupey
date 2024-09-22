@@ -81,8 +81,8 @@ Once you have a GitHub account, you can generate a Personal Access Token (API ke
 
 ### Example API Key Format
 A GitHub API key typically looks like this:
-```
-ghp_16EXAMPLEiP5EqMVPd6wzXAi7D8hf03YH7E
+```bash
+Example api key not real (ghp_16EXAMPLEiP5EqMVPd6wzXAi7D8hf03YH7E)
 ```
 
 ### Further Reading
