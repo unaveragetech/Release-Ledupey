@@ -38,6 +38,58 @@ or
 
 - **GitHub**: You’ll need a GitHub account and an API key (available in your GitHub settings).
 
+- ```bash
+## Obtaining a GitHub Account and API Key
+
+To utilize the **Release-Ledupey** application, you will need a GitHub account and a GitHub API key. Here’s how to obtain both:
+
+### 1. Creating a GitHub Account
+
+If you don’t already have a GitHub account, follow these steps to create one:
+
+- Visit the [GitHub Signup Page](https://github.com/join).
+- Fill in your details, including username, email, and password.
+- Complete the sign-up process by verifying your email address.
+
+### 2. Generating a GitHub API Key
+
+Once you have a GitHub account, you can generate a Personal Access Token (API key) to authenticate your requests to the GitHub API. Here’s how:
+
+1. **Log in to GitHub**: Go to [GitHub](https://github.com) and log in with your account credentials.
+
+2. **Access Developer Settings**:
+- Click on your profile picture in the upper-right corner of the page.
+- Select **Settings** from the dropdown menu.
+- In the left sidebar, scroll down and click on **Developer settings**.
+
+3. **Create a Personal Access Token**:
+- In the Developer settings menu, click on **Personal access tokens**.
+- Click the **Tokens (classic)** tab.
+- Click on the **Generate new token** button.
+
+4. **Set Token Permissions**:
+- Give your token a descriptive name (e.g., "Release-Ledupey Token").
+- Set the expiration time according to your needs.
+- Under **Select scopes**, check the boxes for the permissions you need:
+- **repo**: Full control of private repositories (required for repository access).
+- **read:user**: Access to user profile information.
+- After selecting the necessary scopes, click **Generate token** at the bottom.
+
+5. **Copy Your Token**: Once generated, copy your Personal Access Token. **Important**: This token will only be displayed once. If you lose it, you’ll need to generate a new one.
+
+6. **Store the Token Securely**: Treat your API key like a password. Do not share it publicly or expose it in your code.
+
+### Example API Key Format
+A GitHub API key typically looks like this:
+```
+ghp_16EXAMPLEiP5EqMVPd6wzXAi7D8hf03YH7E
+```
+
+### Further Reading
+For more detailed instructions, refer to the official GitHub documentation on [creating a personal access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token).
+
+```
+
 ## Getting Started
 Follow these steps to download and use the project:
 
