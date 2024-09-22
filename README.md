@@ -38,7 +38,7 @@ or
 
 - **GitHub**: You’ll need a GitHub account and an API key (available in your GitHub settings).
 
-- ```bash
+```bash
 ## Obtaining a GitHub Account and API Key
 
 To utilize the **Release-Ledupey** application, you will need a GitHub account and a GitHub API key. Here’s how to obtain both:
